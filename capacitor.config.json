@@ -1,0 +1,8 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "FlashLight",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}
