@@ -1,7 +1,8 @@
 {
   "name": "FlashLight",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }

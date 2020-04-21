@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Flashlight } from '@ionic-native/flashlight/ngx';
+import { Shake } from '@ionic-native/shake/ngx';
+import { BackgroundMode } from '@ionic-native/background-mode/ngx';
+
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +11,19 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  constructor(
+    private shake: Shake,
+    private flashlight: Flashlight,
+    private backgroundMode: BackgroundMode
+  ) {
+
+    const watch = this.shake.startWatch(10).subscribe((a) => {
+      console.log(a)
+      });
+  }
+
+  toggle(){
+    
+  }
 
 }
