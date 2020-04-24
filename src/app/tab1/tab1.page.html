@@ -1,13 +1,32 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
-    <ion-title style="font-weight: 600;">
+    <ion-title style="font-weight: 600; text-align: center;">
       LED Torch Flash Light
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-toolbar (click)="toggle()">
+  <ion-toolbar (click)="toggle()" [style.background-color]="color">
     <img src="assets/icon/bulb.png" id="imgPlacement" style="align-items: center">
   </ion-toolbar>
-</ion-content> 
+  <ion-list>
+    <ion-item style="text-align: center;">
+      <ion-col col-8> Screen Brightness </ion-col>
+      <ion-col col-3 text-center style="font-size:x-large;color: #ff3399;"> {{goalProgress}} %</ion-col>
+
+    </ion-item>
+    <ion-item>
+      <ion-range min="0" max="100" step="10" [(ngModel)]="goalProgress" (ionChange)="setBadge(goalProgress)">
+        <ion-icon size="small" slot="start" name="sunny"></ion-icon>
+        <ion-icon slot="end" name="sunny"></ion-icon>
+      </ion-range>
+    </ion-item>
+
+    <ion-row>
+      <ion-col style="text-align: center; font-weight: 600;">
+        Shake IT - If You are Busy To Tap The Bulb
+      </ion-col>
+    </ion-row>
+  </ion-list>
+</ion-content>
